@@ -1,0 +1,25 @@
+name: weather_app_flutter
+description: A weather forecast flutter App
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.12.0 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  dio: ^4.0.0
+  cupertino_icons: ^1.0.2
+  intl: ^0.17.0
+  get: ^4.6.1
+  google_fonts: ^2.3.0
+
+dev_dependencies:
+  pretty_dio_logger: ^1.1.1
+  logger: ^1.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - images/
+    - assets/
