@@ -24,7 +24,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+      onTap: () {
+        FocusManager.instance.primaryFocus?.unfocus();
+
+      },
       child: MaterialApp(
         title: appTitle,
         theme: ThemeData(primarySwatch: Colors.teal),

@@ -5,7 +5,6 @@ import 'package:weather_app_flutter/modules/home/widget/weather_property.dart';
 
 import '../model/weather_data.dart';
 
-
 class WeatherDataOutput extends StatelessWidget {
   final WeatherData weather;
 

@@ -15,22 +15,24 @@ class HomeController extends GetxController {
   WeatherData? weather;
   late WeatherApi weatherApi;
   TextEditingController _cityTextFieldController = TextEditingController();
+
   TextEditingController get cityTextFieldController => _cityTextFieldController;
+  FocusNode focusNode = FocusNode();
 
   @override
   void onInit() {
     weatherApi = WeatherApiImpl();
+    focusNode.addListener(() {
+      if (focusNode.hasFocus) isWeatherDataLoaded.value = false;
+    });
   }
 
   Future<WeatherData?> showWeather(String? cityName) async {
     try {
-      print("inside controller >>>>>>>>>. ${cityName}");
+      print("inside controller >>>>>>>>>. $cityName");
       var weatherTemp = await weatherApi.getWeatherInfo(cityName);
-
-      print(weatherTemp);
-
+     // print(weatherTemp);
       weather = weatherTemp;
-
       isWeatherDataLoaded.value = true;
       print(isWeatherDataLoaded.value);
       update();

@@ -1,7 +1,6 @@
 import 'package:weather_app_flutter/config/build_config.dart';
 import 'package:weather_app_flutter/network/WeatherApi.dart';
 import 'package:weather_app_flutter/network/dio_client.dart';
-
 import '../modules/home/model/weather_data.dart';
 import '../modules/home/model/weather_response.dart';
 
