@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:logger/logger.dart';
 import 'package:weather_app_flutter/config/build_config.dart';
 import 'package:weather_app_flutter/config/env_config.dart';
+import 'package:weather_app_flutter/core/app_strings.dart';
 import 'modules/home/view/HomePage.dart';
 
 Future<void> main() async {
@@ -19,7 +20,6 @@ Future<void> main() async {
 }
 
 class MyApp extends StatelessWidget {
-  final String appTitle = 'Weather Forecast - Flutter';
 
   @override
   Widget build(BuildContext context) {
@@ -29,9 +29,9 @@ class MyApp extends StatelessWidget {
 
       },
       child: MaterialApp(
-        title: appTitle,
+        title: AppStrings.appTitle,
         theme: ThemeData(primarySwatch: Colors.teal),
-        home: HomePage(title: appTitle),
+        home: HomePage(),
         debugShowCheckedModeBanner: false,
       ),
     );
@@ -41,24 +41,20 @@ class MyApp extends StatelessWidget {
 Future<EnvConfig> getConfig() async {
   var logger = Logger();
   try {
-    String configString = await rootBundle.loadString('assets/config.json');
+    String configString = await rootBundle.loadString(AppStrings.configJson);
     final configJson = await json.decode(configString) as Map<String, dynamic>;
 
-    String baseUrl = configJson['baseUrl'];
-    String appId = configJson['appId'];
+    String baseUrl = configJson[AppStrings.baseUrl];
+    String appId = configJson[AppStrings.appId];
 
     if (baseUrl.isEmpty || appId.isEmpty)
-      logger.e('Base URL and AppID should not empty. '
-          'Please follow the guideline for configuring this project.\n'
-          'Guideline: https://github.com/hasancse91/weather_app_flutter');
+      logger.e(AppStrings.baseUrlAppIdConfigMsg);
 
     return EnvConfig(
       baseUrl: baseUrl,
       appId: appId,
     );
   } catch (e) {
-    throw Exception('$e\nLocal configuration NOT found. '
-        'Please follow the guideline for configuring this project.\n'
-        'Guideline: https://github.com/hasancse91/weather_app_flutter');
+    throw Exception('$e\n${AppStrings.localConfigMsg}');
   }
 }

@@ -12,7 +12,7 @@ class WeatherDataOutput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print("inside weather data output");
+   // print("inside weather data output");
     return Expanded(
       child: Column(
         children: [
