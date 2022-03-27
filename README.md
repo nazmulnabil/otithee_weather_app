@@ -1,9 +1,8 @@
 # Basic Flutter (Android + iOS) App (Dart + Dio) - Weather App
 
 A simple weather forecast App using Open Weather Map API.
-I have used `StatefulWidget` for state management. For network calls I used the popular Flutter package `Dio`.
+I have used `GetX` for state management. For network calls I used the popular Flutter package `Dio`.
 
-<img src="https://raw.githubusercontent.com/hasancse91/weather_app_flutter/master/data/screenshot.jpg" width="360" height="760" />
 
 
 ### Project Description
