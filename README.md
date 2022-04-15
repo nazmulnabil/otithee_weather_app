@@ -6,6 +6,7 @@ I have used `GetX` for state management. For network calls I used the popular Fl
 
 
 ### Project Description
+https://github.com/nazmulnabil/otithee_weather_app/blob/main/screenshots/Screenshot_20220415-231319.png
 A weather forecast Android Application with Flutter based on Repository pattern. The UI will be as like as above screenshot. There is a textfield which takes city name and a button.After pressing the button it takes input from textfield.Then App will send request to Open Weather web API and show the weather information in the UI.
 
 ### Open Weather API
