@@ -1,8 +1,10 @@
 import 'package:weather_app_flutter/config/build_config.dart';
-import 'package:weather_app_flutter/network/WeatherApi.dart';
+import 'package:weather_app_flutter/modules/home/data/model/weather_data.dart';
+import 'package:weather_app_flutter/modules/home/data/model/weather_response.dart';
 import 'package:weather_app_flutter/network/dio_client.dart';
-import '../modules/home/model/weather_data.dart';
-import '../modules/home/model/weather_response.dart';
+
+import 'WeatherApi.dart';
+
 
 class WeatherApiImpl extends WeatherApi {
   var logger = BuildConfig.instance.config.logger;
@@ -15,12 +17,13 @@ class WeatherApiImpl extends WeatherApi {
   Future<WeatherData> _getWeather(String? cityName) async {
     try {
       var dioClient = DioClient().client;
-      print('>>>>>>>>>>>>>>>$cityName');
+      print('weatherImpl >>>>>>>>>>>>>>>$cityName');
       var response = await dioClient.get(
         '/weather',
         queryParameters: {'q': cityName},
       );
 
+      print('!!!!!! $response');
       logger.i("city Response body JSON:\n$response");
 
       WeatherResponse weatherResponse = WeatherResponse.fromJson(response.data);

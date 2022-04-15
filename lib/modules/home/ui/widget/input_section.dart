@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:weather_app_flutter/core/app_strings.dart';
 import 'package:weather_app_flutter/core/app_values.dart';
-import 'package:weather_app_flutter/modules/home/widget/weather_text_field.dart';
-
-import '../controller/home_controller.dart';
+import 'package:weather_app_flutter/modules/home/data/controller/home_controller.dart';
+import 'package:weather_app_flutter/modules/home/ui/widget/weather_text_field.dart';
 import 'custom_elevated_button.dart';
 
 class InputSection extends StatelessWidget {

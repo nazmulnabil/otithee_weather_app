@@ -31,9 +31,10 @@ class TemperatureSection extends StatelessWidget {
 
   _getTemperatureRow() {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
         Text(temperature, style: extraLargeTitleTextStyle),
-        Text('°C', style: TextStyle(fontSize: 35, color: Colors.teal)),
+        Text('°C', style: TextStyle(fontSize: 80, color: Colors.orangeAccent)),
         Spacer(),
         Column(
           mainAxisAlignment: MainAxisAlignment.center,

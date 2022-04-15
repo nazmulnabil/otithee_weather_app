@@ -1,10 +1,7 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import '../../../network/WeatherApi.dart';
-import '../../../network/WeatherApiImpl.dart';
+import 'package:weather_app_flutter/data/repository/WeatherApi.dart';
+import 'package:weather_app_flutter/data/repository/WeatherApiImpl.dart';
 import '../model/City.dart';
 import '../model/weather_data.dart';
 
@@ -31,7 +28,7 @@ class HomeController extends GetxController {
     try {
       print("inside controller >>>>>>>>>. $cityName");
       var weatherTemp = await weatherApi.getWeatherInfo(cityName);
-     // print(weatherTemp);
+       print(weatherTemp);
       weather = weatherTemp;
       isWeatherDataLoaded.value = true;
       print(isWeatherDataLoaded.value);

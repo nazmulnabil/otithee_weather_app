@@ -9,7 +9,7 @@ abstract class AppStrings {
 
   static const String localConfigMsg = 'Local configuration NOT found. '
       'Please follow the guideline for configuring this project.\n'
-      'Guideline: https://github.com/hasancse91/weather_app_flutter';
+      'Guideline: https://github.com/nazmulnabil/otithee_weather_app';
 
   static const String baseUrlAppIdConfigMsg = 'Base URL and AppID should not empty. '
       'Please follow the guideline for configuring this project.\n'

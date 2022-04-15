@@ -1,11 +1,14 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 import 'package:logger/logger.dart';
 import 'package:weather_app_flutter/config/build_config.dart';
 import 'package:weather_app_flutter/config/env_config.dart';
 import 'package:weather_app_flutter/core/app_strings.dart';
-import 'modules/home/view/HomePage.dart';
+import 'package:weather_app_flutter/routes/app_pages.dart';
+
+
 
 Future<void> main() async {
   var logger = Logger();
@@ -28,10 +31,12 @@ class MyApp extends StatelessWidget {
         FocusManager.instance.primaryFocus?.unfocus();
 
       },
-      child: MaterialApp(
+      child: GetMaterialApp(
         title: AppStrings.appTitle,
         theme: ThemeData(primarySwatch: Colors.teal),
-        home: HomePage(),
+       // home: HomePage(),
+        initialRoute: AppPages.INITIAL,
+        getPages:AppPages.routes,
         debugShowCheckedModeBanner: false,
       ),
     );

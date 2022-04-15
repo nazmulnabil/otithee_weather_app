@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:weather_app_flutter/core/app_colors.dart';
-import 'package:weather_app_flutter/modules/home/controller/home_controller.dart';
+import 'package:weather_app_flutter/modules/home/data/controller/home_controller.dart';
 
 class WeatherTextField extends StatelessWidget {
   const WeatherTextField({Key? key}) : super(key: key);
@@ -30,7 +30,7 @@ class WeatherTextField extends StatelessWidget {
         labelStyle: TextStyle(color: AppColors.colorPrimary, fontSize: 15),
         hintText: 'Enter city name',
         hintStyle: TextStyle(
-            color: Colors.grey, fontSize: 15, fontWeight: FontWeight.w300),
+            color: Colors.black, fontSize: 15, fontWeight: FontWeight.w300),
         /* suffixIcon: IconButton(
           color: AppColors.colorPrimary,
           onPressed: () {
@@ -44,8 +44,8 @@ class WeatherTextField extends StatelessWidget {
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(25),
               bottomLeft: Radius.circular(25),
-              topRight: Radius.zero,
-              bottomRight: Radius.zero),
+              topRight: Radius.circular(25),
+              bottomRight: Radius.circular(25)),
           borderSide: BorderSide(
             color: AppColors.colorPrimary,
           ),

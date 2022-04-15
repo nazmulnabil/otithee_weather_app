@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app_flutter/modules/home/widget/sun_time.dart';
-import 'package:weather_app_flutter/modules/home/widget/temperature_section.dart';
-import 'package:weather_app_flutter/modules/home/widget/weather_property.dart';
+import 'package:weather_app_flutter/modules/home/data/model/weather_data.dart';
+import 'package:weather_app_flutter/modules/home/ui/widget/sun_time.dart';
+import 'package:weather_app_flutter/modules/home/ui/widget/temperature_section.dart';
+import 'package:weather_app_flutter/modules/home/ui/widget/weather_property.dart';
 
-import '../model/weather_data.dart';
 
 class WeatherDataOutput extends StatelessWidget {
   final WeatherData weather;
@@ -16,6 +16,8 @@ class WeatherDataOutput extends StatelessWidget {
     return Expanded(
       child: Column(
         children: [
+          Divider(
+          ),
           TemperatureSection(
             dateTime: weather.dateTime,
             temperature: weather.temperature,
@@ -30,6 +32,7 @@ class WeatherDataOutput extends StatelessWidget {
             visibility: weather.visibility,
           ),
           Spacer(),
+          Divider(),
           SunTime(sunrise: weather.sunrise, sunset: weather.sunset),
           SizedBox(height: 10)
         ],

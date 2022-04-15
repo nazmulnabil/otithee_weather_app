@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:weather_app_flutter/core/app_colors.dart';
 import 'package:weather_app_flutter/core/app_strings.dart';
 import 'package:weather_app_flutter/core/app_values.dart';
-import 'package:weather_app_flutter/modules/home/controller/home_controller.dart';
+import 'package:weather_app_flutter/modules/home/data/controller/home_controller.dart';
 import '../widget/input_section.dart';
 import '../widget/weather_data_output.dart';
 
@@ -15,12 +15,22 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.lazyPut(() => HomeController());
     return Scaffold(
+
+
       appBar: AppBar(
         backgroundColor: AppColors.colorPrimary,
         title: Text(AppStrings.appTitle),
       ),
       body: Container(
-        margin: EdgeInsets.all(AppValues.meddiumPadding),
+      decoration: BoxDecoration(
+      image: DecorationImage(
+      image: AssetImage(
+      'images/sunny_day.jpg'),
+      fit: BoxFit.fill,
+      ),
+      ),
+        padding: EdgeInsets.all(AppValues.meddiumPadding),
+
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
@@ -28,6 +38,7 @@ class HomePage extends StatelessWidget {
             SizedBox(
               height: AppValues.padding,
             ),
+
             Obx(() {
               if ( Get.find<HomeController>().isWeatherDataLoaded.value == true)
                  return  WeatherDataOutput(
