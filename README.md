@@ -1,6 +1,6 @@
 # Flutter project (Android + iOS) App (Dart + Dio) - Weather App
 
-A simple weather forecast App using Open Weather Map API based on Repository pattern.The presentation layer is separated from data layer to maintain the proper architecture so that the code can be easily find testable ,reusable and maintainable...
+A simple weather forecast App using Open Weather Map API based on Repository pattern.The presentation layer is separated from data layer to maintain the proper architecture so that the code can be easily testable,reusable and maintainable...
 I have used `GetX` for state management. For network calls I used the popular Flutter package `Dio`.
 
 
