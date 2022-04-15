@@ -1,12 +1,12 @@
 # Flutter project (Android + iOS) App (Dart + Dio) - Weather App
 
-A simple weather forecast App using Open Weather Map API.
+A simple weather forecast App using Open Weather Map API based on Repository pattern.The presentation layer is separated from data layer to maintain the proper architecture so that the code can be easily find testable ,reusable and maintainable...
 I have used `GetX` for state management. For network calls I used the popular Flutter package `Dio`.
 
 
 
 ### Project Description
-We will develop a weather forecast Android Application with Flutter based on Repository pattern. The UI will be as like as above screenshot. There is a textfield which takes city name and a button.After pressing the button it takes input from textfield.Then App will send request to Open Weather web API and show the weather information in the UI.
+A weather forecast Android Application with Flutter based on Repository pattern. The UI will be as like as above screenshot. There is a textfield which takes city name and a button.After pressing the button it takes input from textfield.Then App will send request to Open Weather web API and show the weather information in the UI.
 
 ### Open Weather API
 We will use [Open Weather Map API](https://openweathermap.org/api) for collecting weather information. To get the real weather information of a city, you need to sign up and get your own `APP ID`. Otherwise you can test the API with their sample `BASE URL` and sample `APP ID` without creating account.
